@@ -14,6 +14,12 @@ RUN tlmgr update --self && \
     libertine \
     newtx \
     cabin \
-    inconsolata
+    inconsolata \
+    mathdots \
+    yhmath
+
+RUN apk add --no-cache msttcorefonts-installer fontconfig && \
+    update-ms-fonts && \
+    fc-cache -f
 
 WORKDIR /data
